@@ -35,6 +35,7 @@
 body{
     min-height:100vh;
     font-family:Inter,Arial,sans-serif;
+
     background:
         radial-gradient(
             circle at top left,
@@ -209,32 +210,6 @@ input:focus{
 }
 
 /* =========================
-   FORGOT PASSWORD
-========================= */
-
-.forgot-password{
-    display:block;
-
-    text-align:right;
-
-    margin-top:9px;
-
-    color:var(--primary);
-
-    font-size:13px;
-
-    font-weight:700;
-
-    text-decoration:none;
-
-    cursor:pointer;
-}
-
-.forgot-password:hover{
-    text-decoration:underline;
-}
-
-/* =========================
    BUTTON
 ========================= */
 
@@ -292,37 +267,6 @@ button:disabled{
     opacity:.55;
 
     cursor:not-allowed;
-}
-
-/* =========================
-   RESET BUTTON
-========================= */
-
-.reset-btn{
-    margin-top:16px;
-}
-
-/* =========================
-   BACK BUTTON
-========================= */
-
-.back-btn{
-
-    background:#f3e8ff;
-
-    color:var(--deep);
-
-    box-shadow:none;
-
-    margin-top:10px;
-}
-
-.back-btn:hover:not(:disabled){
-
-    background:#ead7ff;
-
-    box-shadow:none;
-
 }
 
 /* =========================
@@ -468,169 +412,83 @@ button:disabled{
 <div class="card">
 
     <!-- =========================
-         LOGIN SECTION
+         LOGIN
     ========================== -->
 
-    <div id="loginSection">
-
-        <div class="logo">
-            📚
-        </div>
-
-        <h1>
-            Welcome Back
-        </h1>
-
-        <p class="subtitle">
-            Login to continue to your English Notes study hub.
-        </p>
+    <div class="logo">
+        📚
+    </div>
 
 
-        <form id="loginForm">
-
-            <label for="email">
-                Email Address
-            </label>
-
-            <input
-                type="email"
-                id="email"
-                placeholder="Enter your email address"
-                autocomplete="email"
-                required
-            >
+    <h1>
+        Welcome Back
+    </h1>
 
 
-            <label for="password">
-                Password
-            </label>
-
-            <input
-                type="password"
-                id="password"
-                placeholder="Enter your password"
-                autocomplete="current-password"
-                required
-            >
+    <p class="subtitle">
+        Login to continue to your English Notes study hub.
+    </p>
 
 
-            <a
-                href="#"
-                class="forgot-password"
-                id="forgotPassword"
-            >
-                Forgot Password?
-            </a>
+    <form id="loginForm">
+
+        <label for="email">
+            Email Address
+        </label>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email address"
+            autocomplete="email"
+            required
+        >
 
 
-            <button
-                type="submit"
-                id="loginBtn"
-            >
-                Login
-            </button>
+        <label for="password">
+            Password
+        </label>
 
-        </form>
-
-
-        <div
-            id="message"
-            class="message"
-        ></div>
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+        >
 
 
-        <div class="links">
+        <button
+            type="submit"
+            id="loginBtn"
+        >
+            Login
+        </button>
 
-            Don't have an account?
-
-            <a href="register.html">
-                Create Account
-            </a>
-
-        </div>
+    </form>
 
 
-        <div class="info">
+    <div
+        id="message"
+        class="message"
+    ></div>
 
-            🔐 Your notes are available only after
-            your payment has been approved.
 
-        </div>
+    <div class="links">
+
+        Don't have an account?
+
+        <a href="register.html">
+            Create Account
+        </a>
 
     </div>
 
 
-    <!-- =========================
-         RESET PASSWORD SECTION
-    ========================== -->
+    <div class="info">
 
-    <div
-        id="resetSection"
-        style="display:none;"
-    >
-
-        <div class="logo">
-            🔑
-        </div>
-
-
-        <h1>
-            Reset Password
-        </h1>
-
-
-        <p class="subtitle">
-            Enter your registered email address and we'll send you a secure password reset link.
-        </p>
-
-
-        <form id="resetForm">
-
-            <label for="resetEmail">
-                Email Address
-            </label>
-
-            <input
-                type="email"
-                id="resetEmail"
-                placeholder="Enter your registered email"
-                autocomplete="email"
-                required
-            >
-
-
-            <button
-                type="submit"
-                id="resetBtn"
-                class="reset-btn"
-            >
-                Send Reset Link
-            </button>
-
-
-            <button
-                type="button"
-                id="backBtn"
-                class="back-btn"
-            >
-                ← Back to Login
-            </button>
-
-        </form>
-
-
-        <div
-            id="resetMessage"
-            class="message"
-        ></div>
-
-
-        <div class="info">
-
-            📧 Check your email inbox and spam folder
-            for the password reset message.
-
-        </div>
+        🔐 Your notes are available only after
+        your payment has been approved.
 
     </div>
 
@@ -647,8 +505,7 @@ import {
 
 import {
     signInWithEmailAndPassword,
-    signOut,
-    sendPasswordResetEmail
+    signOut
 } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 
 
@@ -659,14 +516,8 @@ import {
 
 
 /* =========================
-   LOGIN ELEMENTS
+   ELEMENTS
 ========================= */
-
-const loginSection =
-    document.getElementById("loginSection");
-
-const resetSection =
-    document.getElementById("resetSection");
 
 const form =
     document.getElementById("loginForm");
@@ -677,115 +528,26 @@ const message =
 const loginBtn =
     document.getElementById("loginBtn");
 
-const forgotPassword =
-    document.getElementById("forgotPassword");
-
-
-/* =========================
-   RESET ELEMENTS
-========================= */
-
-const resetForm =
-    document.getElementById("resetForm");
-
-const resetEmail =
-    document.getElementById("resetEmail");
-
-const resetBtn =
-    document.getElementById("resetBtn");
-
-const resetMessage =
-    document.getElementById("resetMessage");
-
-const backBtn =
-    document.getElementById("backBtn");
-
 
 /* =========================
    MESSAGE
 ========================= */
 
 function showMessage(
-    element,
     text,
     type
 ){
 
-    element.textContent =
+    message.textContent =
         text;
 
-    element.className =
+    message.className =
         "message " + type;
 
-    element.style.display =
+    message.style.display =
         "block";
 
 }
-
-
-/* =========================
-   CLEAR MESSAGE
-========================= */
-
-function clearMessage(element){
-
-    element.textContent = "";
-
-    element.className =
-        "message";
-
-    element.style.display =
-        "none";
-
-}
-
-
-/* =========================
-   SHOW RESET SECTION
-========================= */
-
-forgotPassword.addEventListener(
-    "click",
-    (e) => {
-
-        e.preventDefault();
-
-        clearMessage(message);
-
-        resetEmail.value =
-            document
-                .getElementById("email")
-                .value
-                .trim();
-
-        loginSection.style.display =
-            "none";
-
-        resetSection.style.display =
-            "block";
-
-    }
-);
-
-
-/* =========================
-   BACK TO LOGIN
-========================= */
-
-backBtn.addEventListener(
-    "click",
-    () => {
-
-        clearMessage(resetMessage);
-
-        resetSection.style.display =
-            "none";
-
-        loginSection.style.display =
-            "block";
-
-    }
-);
 
 
 /* =========================
@@ -818,14 +580,15 @@ form.addEventListener(
             "Logging in...";
 
 
-        clearMessage(message);
+        message.style.display =
+            "none";
 
 
         try{
 
-            /*
-             * Firebase Authentication
-             */
+            /* =========================
+               FIREBASE AUTHENTICATION
+            ========================== */
 
             const credential =
                 await signInWithEmailAndPassword(
@@ -836,15 +599,12 @@ form.addEventListener(
 
 
             const user =
-    credential.user;
-
-console.log("LOGIN EMAIL:", user.email);
-console.log("LOGIN UID:", user.uid);
+                credential.user;
 
 
-            /*
-             * Get user profile
-             */
+            /* =========================
+               GET USER PROFILE
+            ========================== */
 
             const snapshot =
                 await get(
@@ -856,16 +616,15 @@ console.log("LOGIN UID:", user.uid);
                 );
 
 
-            /*
-             * No database profile
-             */
+            /* =========================
+               PROFILE NOT FOUND
+            ========================== */
 
             if(!snapshot.exists()){
 
                 await signOut(auth);
 
                 showMessage(
-                    message,
                     "Your account information was not found. Please contact the administrator.",
                     "error"
                 );
@@ -884,9 +643,9 @@ console.log("LOGIN UID:", user.uid);
                 snapshot.val();
 
 
-            /*
-             * ADMIN
-             */
+            /* =========================
+               ADMIN
+            ========================== */
 
             if(
                 userData.role ===
@@ -901,9 +660,9 @@ console.log("LOGIN UID:", user.uid);
             }
 
 
-            /*
-             * APPROVED STUDENT
-             */
+            /* =========================
+               APPROVED STUDENT
+            ========================== */
 
             if(
                 userData.paymentStatus ===
@@ -918,9 +677,9 @@ console.log("LOGIN UID:", user.uid);
             }
 
 
-            /*
-             * REJECTED PAYMENT
-             */
+            /* =========================
+               REJECTED PAYMENT
+            ========================== */
 
             if(
                 userData.paymentStatus ===
@@ -935,16 +694,17 @@ console.log("LOGIN UID:", user.uid);
             }
 
 
-            /*
-             * PENDING
-             */
+            /* =========================
+               PENDING
+            ========================== */
 
             window.location.replace(
                 "pending.html"
             );
 
+        }
 
-        }catch(error){
+        catch(error){
 
             console.error(
                 "Login error:",
@@ -1018,7 +778,6 @@ console.log("LOGIN UID:", user.uid);
 
 
             showMessage(
-                message,
                 errorMessage,
                 "error"
             );
@@ -1029,140 +788,6 @@ console.log("LOGIN UID:", user.uid);
 
             loginBtn.textContent =
                 "Login";
-
-        }
-
-    }
-);
-
-
-/* =========================
-   PASSWORD RESET
-========================= */
-
-resetForm.addEventListener(
-    "submit",
-    async (e) => {
-
-        e.preventDefault();
-
-
-        const email =
-            resetEmail.value
-                .trim();
-
-
-        if(!email){
-
-            showMessage(
-                resetMessage,
-                "Please enter your email address.",
-                "error"
-            );
-
-            return;
-        }
-
-
-        resetBtn.disabled =
-            true;
-
-        resetBtn.textContent =
-            "Sending...";
-
-
-        clearMessage(resetMessage);
-
-
-        try{
-
-            /*
-             * Firebase sends the
-             * password reset email.
-             */
-
-            await sendPasswordResetEmail(
-                auth,
-                email
-            );
-
-
-            showMessage(
-                resetMessage,
-                "Password reset link sent! Please check your email inbox and spam folder.",
-                "success"
-            );
-
-
-            resetBtn.textContent =
-                "Reset Link Sent";
-
-
-        }catch(error){
-
-            console.error(
-                "Password reset error:",
-                error
-            );
-
-
-            let errorMessage =
-                "Unable to send the reset link. Please try again.";
-
-
-            if(
-                error.code ===
-                "auth/invalid-email"
-            ){
-
-                errorMessage =
-                    "Please enter a valid email address.";
-
-            }
-
-            else if(
-                error.code ===
-                "auth/user-not-found"
-            ){
-
-                errorMessage =
-                    "No account exists with this email address.";
-
-            }
-
-            else if(
-                error.code ===
-                "auth/too-many-requests"
-            ){
-
-                errorMessage =
-                    "Too many requests. Please wait a while and try again.";
-
-            }
-
-            else if(
-                error.code ===
-                "auth/network-request-failed"
-            ){
-
-                errorMessage =
-                    "Network error. Please check your internet connection.";
-
-            }
-
-
-            showMessage(
-                resetMessage,
-                errorMessage,
-                "error"
-            );
-
-
-            resetBtn.disabled =
-                false;
-
-            resetBtn.textContent =
-                "Send Reset Link";
 
         }
 
