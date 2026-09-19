@@ -1,0 +1,1997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Register & Payment | English Notes</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --bg:#faf7ff;
+    --card:#ffffff;
+    --primary:#7e22ce;
+    --deep:#581c87;
+    --lav:#a855f7;
+    --soft:#e9d5ff;
+    --text:#261b32;
+    --muted:#6b5e72;
+    --border:#e9ddf2;
+    --success:#16a34a;
+    --danger:#dc2626;
+    --shadow:0 18px 45px rgba(88,28,135,.12);
+}
+
+body{
+    min-height:100vh;
+    font-family:Inter,Arial,sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #f3e8ff 0%,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #ede9fe 0%,
+            transparent 35%
+        ),
+        var(--bg);
+
+    color:var(--text);
+
+    padding:35px 15px;
+}
+
+.container{
+    width:100%;
+    max-width:620px;
+    margin:auto;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:26px;
+    padding:32px;
+    box-shadow:var(--shadow);
+    animation:fadeUp .45s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.logo{
+    width:72px;
+    height:72px;
+
+    margin:0 auto 16px;
+
+    border-radius:21px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7e22ce,
+            #a855f7
+        );
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:34px;
+
+    box-shadow:
+        0 10px 25px
+        rgba(126,34,206,.22);
+}
+
+h1{
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    color:var(--deep);
+
+    font-size:32px;
+
+    line-height:1.2;
+
+    margin-bottom:9px;
+}
+
+.subtitle{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.6;
+}
+
+
+/* =========================
+   STEPS
+========================= */
+
+.steps{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    margin:25px 0 30px;
+
+    flex-wrap:wrap;
+}
+
+.step{
+    display:flex;
+    align-items:center;
+
+    gap:7px;
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    font-weight:800;
+}
+
+.step-number{
+    width:27px;
+    height:27px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--soft);
+
+    color:var(--deep);
+}
+
+.step.active{
+    color:var(--primary);
+}
+
+.step.active .step-number{
+    background:var(--primary);
+    color:white;
+}
+
+.step-line{
+    width:35px;
+    height:1px;
+    background:var(--border);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+    margin-top:25px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:15px;
+}
+
+.section-icon{
+    width:38px;
+    height:38px;
+
+    border-radius:12px;
+
+    background:var(--soft);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:19px;
+}
+
+.section-title h2{
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    color:var(--deep);
+
+    font-size:21px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+label{
+    display:block;
+
+    margin:15px 0 7px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    color:var(--text);
+}
+
+input{
+    width:100%;
+
+    padding:13px 14px;
+
+    border:1px solid var(--border);
+
+    background:#fff;
+
+    color:var(--text);
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.2s;
+}
+
+input:focus{
+
+    border-color:var(--lav);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(168,85,247,.12);
+}
+
+input::placeholder{
+    color:#a89db0;
+}
+
+.password-note{
+    color:var(--muted);
+    font-size:12px;
+    margin-top:6px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button{
+    width:100%;
+
+    border:0;
+
+    border-radius:12px;
+
+    padding:13px 16px;
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.primary-btn{
+
+    margin-top:23px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7e22ce,
+            #a855f7
+        );
+
+    color:white;
+
+    box-shadow:
+        0 8px 20px
+        rgba(126,34,206,.20);
+}
+
+.primary-btn:hover:not(:disabled){
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 11px 26px
+        rgba(126,34,206,.28);
+}
+
+.primary-btn:active:not(:disabled){
+    transform:scale(.98);
+}
+
+button:disabled{
+    opacity:.55;
+    cursor:not-allowed;
+}
+
+
+/* =========================
+   PAYMENT SECTION
+========================= */
+
+#paymentSection{
+
+    margin-top:10px;
+
+    animation:paymentIn .4s ease;
+}
+
+@keyframes paymentIn{
+
+    from{
+        opacity:0;
+        transform:translateY(12px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+
+}
+
+.payment-box{
+
+    padding-top:10px;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.price{
+
+    text-align:center;
+
+    font-size:42px;
+
+    font-weight:900;
+
+    color:var(--primary);
+
+    margin:8px 0 3px;
+}
+
+.price-label{
+
+    text-align:center;
+
+    color:var(--muted);
+
+    font-size:13px;
+}
+
+
+/* =========================
+   UPI
+========================= */
+
+.upi{
+
+    margin:22px 0;
+
+    padding:16px;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5edff,
+            #faf7ff
+        );
+
+    border:1px solid var(--soft);
+
+    text-align:center;
+}
+
+.upi-label{
+
+    font-size:13px;
+
+    color:var(--muted);
+
+    margin-bottom:5px;
+}
+
+.upi strong{
+
+    color:var(--deep);
+
+    font-size:17px;
+
+    word-break:break-word;
+}
+
+
+/* =========================
+   QR
+========================= */
+
+.qr-box{
+
+    text-align:center;
+
+    margin:25px 0;
+}
+
+.qr-box p{
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    margin-bottom:14px;
+}
+
+.qr-frame{
+
+    display:inline-flex;
+
+    padding:12px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(88,28,135,.10);
+}
+
+.qr-frame img{
+
+    width:240px;
+
+    max-width:70vw;
+
+    display:block;
+
+    border-radius:9px;
+}
+
+
+/* =========================
+   INSTRUCTIONS
+========================= */
+
+.instructions{
+
+    background:var(--soft);
+
+    border-radius:16px;
+
+    padding:18px;
+
+    margin:22px 0;
+}
+
+.instructions h3{
+
+    color:var(--deep);
+
+    font-size:16px;
+
+    margin-bottom:9px;
+}
+
+.instructions ol{
+
+    padding-left:20px;
+}
+
+.instructions li{
+
+    margin:7px 0;
+
+    color:var(--text);
+
+    font-size:14px;
+
+    line-height:1.5;
+}
+
+
+/* =========================
+   PAYMENT FORM
+========================= */
+
+.utr-box{
+
+    margin-top:25px;
+
+    padding-top:25px;
+
+    border-top:1px solid var(--border);
+}
+
+.utr-title{
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    color:var(--deep);
+
+    font-size:20px;
+
+    margin-bottom:4px;
+}
+
+.utr-description{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.5;
+
+    margin-bottom:15px;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.payment-status{
+
+    margin-top:15px;
+
+    padding:13px 15px;
+
+    border-radius:13px;
+
+    background:#f5edff;
+
+    border:1px solid var(--soft);
+
+    color:var(--deep);
+
+    font-size:13px;
+
+    line-height:1.5;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message{
+
+    display:none;
+
+    margin-top:17px;
+
+    padding:13px 15px;
+
+    border-radius:13px;
+
+    font-size:14px;
+
+    line-height:1.5;
+}
+
+.message.error{
+
+    display:block;
+
+    background:#fee2e2;
+
+    color:#991b1b;
+
+    border:1px solid #fecaca;
+}
+
+.message.success{
+
+    display:block;
+
+    background:#dcfce7;
+
+    color:#166534;
+
+    border:1px solid #bbf7d0;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-link{
+
+    text-align:center;
+
+    margin-top:22px;
+
+    color:var(--muted);
+
+    font-size:14px;
+}
+
+.login-link a{
+
+    color:var(--primary);
+
+    font-weight:800;
+
+    text-decoration:none;
+}
+
+.login-link a:hover{
+    text-decoration:underline;
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+.logout-btn{
+
+    margin-top:10px;
+
+    background:#fff;
+
+    color:var(--danger);
+
+    border:1px solid #fecaca;
+}
+
+.logout-btn:hover{
+    background:#fef2f2;
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden{
+    display:none !important;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:560px){
+
+    body{
+        padding:20px 12px;
+    }
+
+    .card{
+        padding:24px 19px;
+        border-radius:21px;
+    }
+
+    h1{
+        font-size:27px;
+    }
+
+    .logo{
+        width:64px;
+        height:64px;
+        font-size:29px;
+    }
+
+    .steps{
+        gap:5px;
+    }
+
+    .step{
+        font-size:10px;
+    }
+
+    .step-line{
+        width:18px;
+    }
+
+    .price{
+        font-size:37px;
+    }
+
+    .qr-frame img{
+        width:210px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<div class="header">
+
+    <div class="logo">
+        📚
+    </div>
+
+    <h1>
+        English Notes
+    </h1>
+
+    <p class="subtitle">
+        Create your account and unlock the complete Semester 1 study hub.
+    </p>
+
+</div>
+
+
+<!-- =========================
+     STEPS
+========================= -->
+
+<div class="steps">
+
+    <div
+        class="step active"
+        id="stepAccount"
+    >
+
+        <span class="step-number">
+            1
+        </span>
+
+        Account
+
+    </div>
+
+
+    <div class="step-line"></div>
+
+
+    <div
+        class="step"
+        id="stepPayment"
+    >
+
+        <span class="step-number">
+            2
+        </span>
+
+        Payment
+
+    </div>
+
+
+    <div class="step-line"></div>
+
+
+    <div class="step">
+
+        <span class="step-number">
+            3
+        </span>
+
+        Approval
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     REGISTRATION
+========================= -->
+
+<div id="registrationSection">
+
+    <div class="section-title">
+
+        <div class="section-icon">
+            👤
+        </div>
+
+        <h2>
+            Create Your Account
+        </h2>
+
+    </div>
+
+
+    <form id="registerForm">
+
+        <label for="name">
+            Full Name
+        </label>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Enter your full name"
+            autocomplete="name"
+            required
+        >
+
+
+        <label for="email">
+            Email Address
+        </label>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email address"
+            autocomplete="email"
+            required
+        >
+
+
+        <label for="password">
+            Password
+        </label>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Create a password"
+            minlength="6"
+            autocomplete="new-password"
+            required
+        >
+
+        <div class="password-note">
+            Password must contain at least 6 characters.
+        </div>
+
+
+        <label for="confirmPassword">
+            Confirm Password
+        </label>
+
+        <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Re-enter your password"
+            minlength="6"
+            autocomplete="new-password"
+            required
+        >
+
+
+        <button
+            type="submit"
+            class="primary-btn"
+            id="registerBtn"
+        >
+            Continue to Payment →
+        </button>
+
+    </form>
+
+</div>
+
+
+<!-- =========================
+     PAYMENT
+========================= -->
+
+<div
+    id="paymentSection"
+    class="payment-box hidden"
+>
+
+
+    <div class="section-title">
+
+        <div class="section-icon">
+            💳
+        </div>
+
+        <h2>
+            Complete Payment
+        </h2>
+
+    </div>
+
+
+    <div class="price">
+        ₹35
+    </div>
+
+    <p class="price-label">
+        One-time payment for English Notes access
+    </p>
+
+
+    <!-- QR CODE -->
+
+    <div class="qr-box">
+
+        <p>
+            Scan this QR code using your UPI application
+        </p>
+
+
+        <div class="qr-frame">
+
+            <img
+                src="qr.jpg"
+                alt="UPI Payment QR Code"
+                id="qrImage"
+            >
+
+        </div>
+
+
+        <p
+            id="qrError"
+            style="
+                display:none;
+                color:#dc2626;
+                margin-top:12px;
+                line-height:1.5;
+            "
+        >
+            <strong>QR code could not be loaded.</strong><br>
+            Please make sure that <strong>qr.jpg</strong>
+            is inside the same folder as this register.html file.
+        </p>
+
+    </div>
+
+
+    <!-- INSTRUCTIONS -->
+
+    <div class="instructions">
+
+        <h3>
+            How to complete your payment
+        </h3>
+
+        <ol>
+
+            <li>
+                Scan the QR code above.
+            </li>
+
+            <li>
+                Pay exactly <strong>₹35</strong>.
+            </li>
+
+            <li>
+                Complete the payment through your UPI app.
+            </li>
+
+            <li>
+                Copy the <strong>UTR / Transaction ID</strong>
+                shown after payment.
+            </li>
+
+            <li>
+                Enter the transaction ID below.
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <!-- UTR -->
+
+    <div class="utr-box">
+
+        <div class="utr-title">
+            Enter Payment Details
+        </div>
+
+        <p class="utr-description">
+            Enter the UTR or Transaction ID from your successful
+            ₹35 payment so the admin can verify it.
+        </p>
+
+
+        <form id="paymentForm">
+
+            <label for="utr">
+                UTR / Transaction ID
+            </label>
+
+            <input
+                type="text"
+                id="utr"
+                placeholder="Example: 123456789012"
+                autocomplete="off"
+                minlength="6"
+                required
+            >
+
+
+            <button
+                type="submit"
+                class="primary-btn"
+                id="submitBtn"
+            >
+                Submit Payment
+            </button>
+
+        </form>
+
+
+        <div class="payment-status">
+
+            🔐 Your payment will be reviewed by the admin.
+            Your English Notes will become available after
+            your payment is approved.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- MESSAGE -->
+
+<div
+    id="message"
+    class="message"
+></div>
+
+
+<!-- LOGOUT -->
+
+<button
+    id="logoutBtn"
+    type="button"
+    class="logout-btn hidden"
+>
+    Logout
+</button>
+
+
+<!-- LOGIN -->
+
+<div
+    id="loginLink"
+    class="login-link"
+>
+
+    Already have an account?
+
+    <a href="login.html">
+        Login
+    </a>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<script type="module">
+
+import {
+    auth,
+    db
+} from "./firebase-config.js";
+
+
+import {
+    createUserWithEmailAndPassword,
+    updateProfile,
+    onAuthStateChanged,
+    signOut
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+
+
+import {
+    ref,
+    get,
+    push,
+    set
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
+
+
+/* =========================
+   ELEMENTS
+========================= */
+
+const registrationSection =
+    document.getElementById(
+        "registrationSection"
+    );
+
+const paymentSection =
+    document.getElementById(
+        "paymentSection"
+    );
+
+const registerForm =
+    document.getElementById(
+        "registerForm"
+    );
+
+const paymentForm =
+    document.getElementById(
+        "paymentForm"
+    );
+
+const registerBtn =
+    document.getElementById(
+        "registerBtn"
+    );
+
+const submitBtn =
+    document.getElementById(
+        "submitBtn"
+    );
+
+const message =
+    document.getElementById(
+        "message"
+    );
+
+const logoutBtn =
+    document.getElementById(
+        "logoutBtn"
+    );
+
+const loginLink =
+    document.getElementById(
+        "loginLink"
+    );
+
+const stepAccount =
+    document.getElementById(
+        "stepAccount"
+    );
+
+const stepPayment =
+    document.getElementById(
+        "stepPayment"
+    );
+
+const qrImage =
+    document.getElementById(
+        "qrImage"
+    );
+
+const qrError =
+    document.getElementById(
+        "qrError"
+    );
+
+
+/* =========================
+   CURRENT USER
+========================= */
+
+let currentUser = null;
+
+
+/*
+ * This variable is important.
+ *
+ * After creating an account Firebase automatically
+ * signs the user in and triggers onAuthStateChanged().
+ *
+ * We use this flag so that the auth listener does NOT
+ * interrupt the registration → payment transition.
+ */
+
+let registrationJustCompleted = false;
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+function showMessage(text,type){
+
+    message.textContent = text;
+
+    message.className =
+        "message " + type;
+
+    message.style.display =
+        "block";
+
+}
+
+
+/* =========================
+   SHOW PAYMENT SECTION
+========================= */
+
+function showPaymentSection(){
+
+    /*
+     * Hide registration
+     */
+
+    registrationSection.classList.add(
+        "hidden"
+    );
+
+
+    /*
+     * Show payment
+     */
+
+    paymentSection.classList.remove(
+        "hidden"
+    );
+
+
+    /*
+     * Update steps
+     */
+
+    stepAccount.classList.remove(
+        "active"
+    );
+
+    stepPayment.classList.add(
+        "active"
+    );
+
+
+    /*
+     * Hide login link
+     */
+
+    loginLink.classList.add(
+        "hidden"
+    );
+
+
+    /*
+     * Show logout
+     */
+
+    logoutBtn.classList.remove(
+        "hidden"
+    );
+
+
+    /*
+     * Scroll to payment
+     */
+
+    setTimeout(() => {
+
+        paymentSection.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    },100);
+
+}
+
+
+/* =========================
+   QR ERROR
+========================= */
+
+qrImage.addEventListener(
+    "error",
+    () => {
+
+        qrImage.style.display =
+            "none";
+
+        qrError.style.display =
+            "block";
+
+    }
+);
+
+
+/* =========================
+   AUTH STATE
+========================= */
+
+onAuthStateChanged(
+    auth,
+    async (user) => {
+
+        /*
+         * No user
+         */
+
+        if(!user){
+
+            currentUser = null;
+
+            return;
+        }
+
+
+        currentUser = user;
+
+
+        /*
+         * VERY IMPORTANT
+         *
+         * If this user was just created
+         * through this page, DO NOT redirect
+         * or rebuild the registration page.
+         *
+         * The registration function is already
+         * showing the payment section.
+         */
+
+        if(registrationJustCompleted){
+
+            return;
+
+        }
+
+
+        /*
+         * Existing logged-in user.
+         *
+         * This happens when a rejected/pending
+         * student opens register.html again.
+         */
+
+        try{
+
+            const snapshot =
+                await get(
+                    ref(
+                        db,
+                        "users/" +
+                        user.uid
+                    )
+                );
+
+
+            if(!snapshot.exists()){
+
+                await signOut(auth);
+
+                return;
+
+            }
+
+
+            const profile =
+                snapshot.val();
+
+
+            /*
+             * ADMIN
+             */
+
+            if(
+                profile.role ===
+                "admin"
+            ){
+
+                window.location.replace(
+                    "admin.html"
+                );
+
+                return;
+
+            }
+
+
+            /*
+             * APPROVED
+             */
+
+            if(
+                profile.paymentStatus ===
+                "approved"
+            ){
+
+                window.location.replace(
+                    "index.html"
+                );
+
+                return;
+
+            }
+
+
+            /*
+             * PENDING / REJECTED
+             *
+             * Show payment section.
+             */
+
+            showPaymentSection();
+
+
+        }catch(error){
+
+            console.error(
+                "Unable to load user profile:",
+                error
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================
+   REGISTER
+========================= */
+
+registerForm.addEventListener(
+    "submit",
+    async (e) => {
+
+        e.preventDefault();
+
+
+        const name =
+            document
+                .getElementById("name")
+                .value
+                .trim();
+
+        const email =
+            document
+                .getElementById("email")
+                .value
+                .trim();
+
+        const password =
+            document
+                .getElementById("password")
+                .value;
+
+        const confirmPassword =
+            document
+                .getElementById("confirmPassword")
+                .value;
+
+
+        /*
+         * Validation
+         */
+
+        if(!name){
+
+            showMessage(
+                "Please enter your full name.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if(password !== confirmPassword){
+
+            showMessage(
+                "Passwords do not match.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if(password.length < 6){
+
+            showMessage(
+                "Password must contain at least 6 characters.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        /*
+         * Disable button
+         */
+
+        registerBtn.disabled =
+            true;
+
+        registerBtn.textContent =
+            "Creating account...";
+
+
+        try{
+
+            /*
+             * Tell auth listener that this is
+             * a brand-new registration.
+             */
+
+            registrationJustCompleted =
+                true;
+
+
+            /*
+             * Create Firebase account
+             */
+
+            const userCredential =
+                await createUserWithEmailAndPassword(
+                    auth,
+                    email,
+                    password
+                );
+
+
+            const user =
+                userCredential.user;
+
+
+            currentUser =
+                user;
+
+
+            /*
+             * Save display name
+             */
+
+            await updateProfile(
+                user,
+                {
+                    displayName:name
+                }
+            );
+
+
+            /*
+             * Create database profile
+             */
+
+            await set(
+                ref(
+                    db,
+                    "users/" +
+                    user.uid
+                ),
+                {
+                    uid:user.uid,
+
+                    name:name,
+
+                    email:email,
+
+                    role:"student",
+
+                    paymentStatus:"pending",
+
+                    createdAt:Date.now()
+                }
+            );
+
+
+            /*
+             * Now show PAYMENT.
+             *
+             * We do NOT redirect anywhere.
+             */
+
+            showPaymentSection();
+
+
+            showMessage(
+                "Account created successfully. Please complete the ₹35 payment below.",
+                "success"
+            );
+
+
+            /*
+             * Registration is finished.
+             * Keep the flag true so the auth listener
+             * does not interfere with this page.
+             */
+
+            registerBtn.textContent =
+                "Account Created ✓";
+
+
+        }catch(error){
+
+            console.error(
+                "Registration error:",
+                error
+            );
+
+
+            /*
+             * Only reset this flag if registration
+             * actually failed.
+             */
+
+            registrationJustCompleted =
+                false;
+
+
+            let errorMessage =
+                "Unable to create your account. Please try again.";
+
+
+            if(
+                error.code ===
+                "auth/email-already-in-use"
+            ){
+
+                errorMessage =
+                    "This email address is already registered. Please login instead.";
+
+            }
+
+            else if(
+                error.code ===
+                "auth/invalid-email"
+            ){
+
+                errorMessage =
+                    "Please enter a valid email address.";
+
+            }
+
+            else if(
+                error.code ===
+                "auth/weak-password"
+            ){
+
+                errorMessage =
+                    "Password is too weak. Use at least 6 characters.";
+
+            }
+
+            else if(
+                error.code ===
+                "auth/network-request-failed"
+            ){
+
+                errorMessage =
+                    "Network error. Please check your internet connection.";
+
+            }
+
+
+            showMessage(
+                errorMessage,
+                "error"
+            );
+
+
+            registerBtn.disabled =
+                false;
+
+            registerBtn.textContent =
+                "Continue to Payment →";
+
+        }
+
+    }
+);
+
+
+/* =========================
+   PAYMENT SUBMISSION
+========================= */
+
+paymentForm.addEventListener(
+    "submit",
+    async (e) => {
+
+        e.preventDefault();
+
+
+        /*
+         * Check login
+         */
+
+        if(!currentUser){
+
+            showMessage(
+                "Your login session has expired. Please login again.",
+                "error"
+            );
+
+            setTimeout(
+                () => {
+
+                    window.location.replace(
+                        "login.html"
+                    );
+
+                },
+                1500
+            );
+
+            return;
+
+        }
+
+
+        const utr =
+            document
+                .getElementById("utr")
+                .value
+                .trim();
+
+
+        /*
+         * UTR validation
+         */
+
+        if(utr.length < 6){
+
+            showMessage(
+                "Please enter a valid UTR / Transaction ID.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        submitBtn.disabled =
+            true;
+
+        submitBtn.textContent =
+            "Submitting Payment...";
+
+
+        try{
+
+            /*
+             * Get user profile
+             */
+
+            const userSnapshot =
+                await get(
+                    ref(
+                        db,
+                        "users/" +
+                        currentUser.uid
+                    )
+                );
+
+
+            if(!userSnapshot.exists()){
+
+                throw new Error(
+                    "Student profile not found."
+                );
+
+            }
+
+
+            const userData =
+                userSnapshot.val();
+
+
+            /*
+             * Create payment record
+             */
+
+            const paymentRef =
+                push(
+                    ref(
+                        db,
+                        "payments"
+                    )
+                );
+
+
+            await set(
+                paymentRef,
+                {
+
+                    paymentId:
+                        paymentRef.key,
+
+                    uid:
+                        currentUser.uid,
+
+                    name:
+                        userData.name ||
+                        currentUser.displayName ||
+                        "",
+
+                    email:
+                        currentUser.email,
+
+                    amount:
+                        35,
+
+                    utr:
+                        utr,
+
+                    status:
+                        "pending",
+
+                    submittedAt:
+                        Date.now()
+
+                }
+            );
+
+
+            /*
+             * DO NOT change user paymentStatus.
+             *
+             * Admin controls approval.
+             */
+
+            showMessage(
+                "Payment submitted successfully! Your payment is now waiting for admin verification.",
+                "success"
+            );
+
+
+            submitBtn.textContent =
+                "Payment Submitted ✓";
+
+
+            /*
+             * Disable UTR input after submission
+             */
+
+            document
+                .getElementById("utr")
+                .disabled = true;
+
+
+            /*
+             * Go to pending page
+             */
+
+            setTimeout(
+                () => {
+
+                    window.location.replace(
+                        "pending.html"
+                    );
+
+                },
+                1800
+            );
+
+
+        }catch(error){
+
+            console.error(
+                "Payment submission error:",
+                error
+            );
+
+
+            showMessage(
+                "Unable to submit your payment. Please try again.",
+                "error"
+            );
+
+
+            submitBtn.disabled =
+                false;
+
+            submitBtn.textContent =
+                "Submit Payment";
+
+        }
+
+    }
+);
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+logoutBtn.addEventListener(
+    "click",
+    async () => {
+
+        try{
+
+            await signOut(auth);
+
+            window.location.replace(
+                "login.html"
+            );
+
+        }catch(error){
+
+            console.error(
+                "Logout error:",
+                error
+            );
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>

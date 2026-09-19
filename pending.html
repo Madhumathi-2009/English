@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Payment Pending | English Notes</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    min-height:100vh;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#eef2ff,#f5f3ff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.card{
+    width:100%;
+    max-width:500px;
+    background:white;
+    padding:40px 30px;
+    border-radius:22px;
+    text-align:center;
+    box-shadow:0 15px 45px rgba(0,0,0,.12);
+}
+
+.icon{
+    width:80px;
+    height:80px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    background:#fef3c7;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+}
+
+h1{
+    color:#1e1b4b;
+    margin-bottom:12px;
+}
+
+p{
+    color:#64748b;
+    line-height:1.7;
+}
+
+.status{
+    margin:25px 0;
+    padding:15px;
+    border-radius:12px;
+    background:#fff7ed;
+    color:#9a3412;
+    font-weight:bold;
+}
+
+button{
+    width:100%;
+    padding:13px;
+    border:0;
+    border-radius:10px;
+    background:#4f46e5;
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#4338ca;
+}
+
+.logout{
+    background:#ef4444;
+    margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="icon">⏳</div>
+
+    <h1>Payment Under Verification</h1>
+
+    <p>
+        Your payment has been submitted successfully.
+        Please wait while the administrator verifies your payment.
+    </p>
+
+    <div class="status">
+        Payment Status: Pending
+    </div>
+
+    <button id="checkBtn">
+        Check Status
+    </button>
+
+    <button class="logout" id="logoutBtn">
+        Logout
+    </button>
+
+</div>
+
+
+<script type="module">
+
+import { auth, db } from "./firebase-config.js";
+
+import {
+    onAuthStateChanged,
+    signOut
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+
+import {
+    ref,
+    get
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
+
+
+let currentUser = null;
+
+
+onAuthStateChanged(auth, async (user) => {
+
+    if(!user){
+
+        window.location.href =
+            "login.html";
+
+        return;
+    }
+
+    currentUser = user;
+
+});
+
+
+document.getElementById("checkBtn")
+.addEventListener("click", async () => {
+
+    if(!currentUser) return;
+
+
+    try{
+
+        const snapshot =
+            await get(
+                ref(
+                    db,
+                    "users/" +
+                    currentUser.uid
+                )
+            );
+
+
+        if(!snapshot.exists()){
+
+            alert(
+                "Student information was not found."
+            );
+
+            return;
+        }
+
+
+        const data = snapshot.val();
+
+
+        if(data.paymentStatus === "approved"){
+
+            window.location.href =
+                "index.html";
+
+        }
+
+        else if(data.paymentStatus === "rejected"){
+
+            window.location.href =
+                "payment.html";
+
+        }
+
+        else{
+
+            alert(
+                "Your payment is still under verification."
+            );
+
+        }
+
+    }catch(error){
+
+        console.error(error);
+
+        alert(
+            "Unable to check your status."
+        );
+
+    }
+
+});
+
+
+document.getElementById("logoutBtn")
+.addEventListener("click", async () => {
+
+    await signOut(auth);
+
+    window.location.href =
+        "login.html";
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,2482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin | English Notes</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+
+    --bg:#faf7ff;
+    --card:#ffffff;
+
+    --primary:#7e22ce;
+    --deep:#581c87;
+    --lav:#a855f7;
+    --soft:#e9d5ff;
+
+    --text:#261b32;
+    --muted:#6b5e72;
+    --border:#e9ddf2;
+
+    --green:#16a34a;
+    --green-bg:#dcfce7;
+
+    --red:#dc2626;
+    --red-bg:#fee2e2;
+
+    --orange:#d97706;
+    --orange-bg:#fef3c7;
+
+    --shadow:
+        0 18px 45px
+        rgba(88,28,135,.12);
+}
+
+body{
+
+    min-height:100vh;
+
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #f3e8ff 0%,
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            #ede9fe 0%,
+            transparent 35%
+        ),
+
+        var(--bg);
+
+    color:var(--text);
+}
+
+/* HEADER */
+
+header{
+
+    background:
+        linear-gradient(
+            135deg,
+            #581c87,
+            #7e22ce,
+            #a855f7
+        );
+
+    color:white;
+
+    padding:18px 20px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(88,28,135,.18);
+}
+
+.header-inner{
+
+    max-width:1150px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:15px;
+}
+
+.header-brand{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.header-logo{
+
+    width:45px;
+    height:45px;
+
+    border-radius:13px;
+
+    background:
+        rgba(255,255,255,.16);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:23px;
+}
+
+header h1{
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:22px;
+    line-height:1.2;
+}
+
+.header-subtitle{
+
+    font-size:11px;
+    opacity:.8;
+    margin-top:3px;
+}
+
+/* LOGOUT */
+
+.logout{
+
+    display:none;
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    padding:10px 17px;
+
+    border-radius:10px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    color:white;
+
+    font-family:inherit;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.logout:hover{
+
+    background:
+        rgba(255,255,255,.22);
+
+    transform:translateY(-1px);
+}
+
+/* CONTAINER */
+
+.container{
+
+    width:100%;
+    max-width:1150px;
+
+    margin:30px auto;
+
+    padding:0 15px;
+}
+
+/* LOGIN SCREEN */
+
+#loginScreen{
+
+    min-height:
+        calc(100vh - 150px);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+}
+
+.login-card{
+
+    width:100%;
+    max-width:430px;
+
+    background:var(--card);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:26px;
+
+    padding:34px;
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+    animation:fadeUp .45s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+.login-icon{
+
+    width:70px;
+    height:70px;
+
+    margin:0 auto 17px;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7e22ce,
+            #a855f7
+        );
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:32px;
+
+    box-shadow:
+        0 10px 25px
+        rgba(126,34,206,.20);
+}
+
+.login-card h2{
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    color:var(--deep);
+
+    font-size:27px;
+
+    margin-bottom:8px;
+}
+
+.login-card p{
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    margin-bottom:22px;
+}
+
+.input-group{
+
+    text-align:left;
+
+    margin-bottom:14px;
+}
+
+.input-group label{
+
+    display:block;
+
+    color:var(--text);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    margin-bottom:6px;
+}
+
+.login-card input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:12px;
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.2s;
+}
+
+.login-card input:focus{
+
+    border-color:var(--lav);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(168,85,247,.12);
+}
+
+.login-btn{
+
+    width:100%;
+
+    margin-top:5px;
+
+    padding:14px;
+
+    border:0;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7e22ce,
+            #a855f7
+        );
+
+    color:white;
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.login-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(126,34,206,.25);
+}
+
+.login-btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+    transform:none;
+}
+
+.login-error{
+
+    display:none;
+
+    margin-top:13px;
+
+    padding:12px;
+
+    border-radius:11px;
+
+    background:var(--red-bg);
+
+    color:#991b1b;
+
+    font-size:13px;
+
+    line-height:1.5;
+}
+
+.login-loading{
+
+    display:none;
+
+    margin-top:13px;
+
+    color:var(--muted);
+
+    font-size:13px;
+}
+
+/* DASHBOARD */
+
+#dashboard{
+
+    display:none;
+}
+
+.dashboard-title{
+
+    margin-bottom:25px;
+}
+
+.dashboard-title h2{
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    color:var(--deep);
+
+    font-size:28px;
+
+    margin-bottom:5px;
+}
+
+.dashboard-title p{
+
+    color:var(--muted);
+
+    font-size:14px;
+}
+
+/* STATS */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+
+    margin-bottom:20px;
+}
+
+.stat{
+
+    background:var(--card);
+
+    border:
+        1px solid
+        var(--border);
+
+    padding:20px;
+
+    border-radius:17px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(88,28,135,.07);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.stat::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7e22ce,
+            #a855f7
+        );
+}
+
+.stat span{
+
+    display:block;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+}
+
+.stat strong{
+
+    font-size:30px;
+
+    color:var(--deep);
+}
+
+/* LOAD */
+
+.load-section{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-bottom:20px;
+}
+
+.load-btn{
+
+    border:0;
+
+    padding:12px 20px;
+
+    border-radius:11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7e22ce,
+            #a855f7
+        );
+
+    color:white;
+
+    font-family:inherit;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 7px 18px
+        rgba(126,34,206,.18);
+
+    transition:.2s;
+}
+
+.load-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 24px
+        rgba(126,34,206,.25);
+}
+
+.load-btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+    transform:none;
+}
+
+/* PAYMENT HEADING */
+
+.payment-heading{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:15px;
+}
+
+.payment-heading h2{
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    color:var(--deep);
+
+    font-size:23px;
+}
+
+.payment-heading span{
+
+    color:var(--muted);
+
+    font-size:12px;
+}
+
+/* PAYMENT CARD */
+
+.payment-card{
+
+    background:var(--card);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:18px;
+
+    padding:21px;
+
+    margin-bottom:15px;
+
+    box-shadow:
+        0 7px 22px
+        rgba(88,28,135,.06);
+
+    animation:cardIn .3s ease;
+}
+
+@keyframes cardIn{
+
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+.payment-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+    margin-bottom:15px;
+}
+
+.student-name{
+
+    color:var(--deep);
+
+    font-size:18px;
+
+    font-weight:800;
+
+    margin-bottom:4px;
+}
+
+.payment-id{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    word-break:break-all;
+}
+
+/* STATUS */
+
+.status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:6px 10px;
+
+    border-radius:30px;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    white-space:nowrap;
+}
+
+.status.pending{
+
+    background:var(--orange-bg);
+    color:#92400e;
+}
+
+.status.approved{
+
+    background:var(--green-bg);
+    color:#166534;
+}
+
+.status.rejected{
+
+    background:var(--red-bg);
+    color:#991b1b;
+}
+
+/* DETAILS */
+
+.details{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:10px;
+
+    padding:15px;
+
+    background:#faf7ff;
+
+    border-radius:13px;
+
+    border:
+        1px solid
+        var(--border);
+}
+
+.detail{
+    min-width:0;
+}
+
+.detail-label{
+
+    display:block;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    font-weight:600;
+
+    margin-bottom:4px;
+}
+
+.detail-value{
+
+    color:var(--text);
+
+    font-size:13px;
+
+    font-weight:700;
+
+    word-break:break-word;
+}
+
+.utr-value{
+
+    color:var(--primary);
+
+    font-family:monospace;
+
+    font-size:14px;
+}
+
+/* ACTIONS */
+
+.actions{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:15px;
+}
+
+.actions button{
+
+    flex:1;
+
+    border:0;
+
+    padding:11px 16px;
+
+    border-radius:10px;
+
+    color:white;
+
+    font-family:inherit;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.actions button:hover{
+
+    transform:translateY(-1px);
+}
+
+.approve{
+    background:var(--green);
+}
+
+.reject{
+    background:var(--red);
+}
+
+.actions button:disabled{
+
+    opacity:.5;
+
+    cursor:not-allowed;
+
+    transform:none;
+}
+
+/* EMPTY */
+
+.empty{
+
+    text-align:center;
+
+    padding:45px 20px;
+
+    background:var(--card);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:18px;
+
+    color:var(--muted);
+
+    box-shadow:
+        0 7px 22px
+        rgba(88,28,135,.06);
+}
+
+.empty-icon{
+
+    font-size:40px;
+
+    margin-bottom:10px;
+}
+
+.empty strong{
+
+    display:block;
+
+    color:var(--deep);
+
+    margin-bottom:5px;
+
+    font-size:16px;
+}
+
+/* LOADING */
+
+.loading{
+
+    text-align:center;
+
+    padding:40px;
+
+    color:var(--muted);
+}
+
+.spinner{
+
+    width:36px;
+
+    height:36px;
+
+    border:4px solid var(--soft);
+
+    border-top-color:var(--primary);
+
+    border-radius:50%;
+
+    animation:spin .8s linear infinite;
+
+    margin:0 auto 12px;
+}
+
+@keyframes spin{
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .header-inner{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+    }
+
+    .logout{
+        width:100%;
+    }
+
+    .payment-top{
+        flex-direction:column;
+    }
+
+    .details{
+        grid-template-columns:1fr;
+    }
+
+    .actions{
+        flex-direction:column;
+    }
+
+    .load-section{
+        justify-content:stretch;
+    }
+
+    .load-btn{
+        width:100%;
+    }
+
+    .payment-heading{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-inner">
+
+        <div class="header-brand">
+
+            <div class="header-logo">
+                📚
+            </div>
+
+            <div>
+
+                <h1>
+                    English Notes — Admin
+                </h1>
+
+                <div class="header-subtitle">
+                    Payment Verification Dashboard
+                </div>
+
+            </div>
+
+        </div>
+
+        <button
+            class="logout"
+            id="logoutBtn"
+        >
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     ADMIN LOGIN
+========================= -->
+
+<div
+    id="loginScreen"
+    class="container"
+>
+
+    <div class="login-card">
+
+        <div class="login-icon">
+            🔐
+        </div>
+
+        <h2>
+            Admin Login
+        </h2>
+
+        <p>
+            Sign in with the administrator account
+            to access the English Notes payment dashboard.
+        </p>
+
+
+        <div class="input-group">
+
+            <label for="adminEmail">
+                Admin Email
+            </label>
+
+            <input
+                type="email"
+                id="adminEmail"
+                placeholder="Enter admin email"
+                autocomplete="username"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label for="adminPassword">
+                Admin Password
+            </label>
+
+            <input
+                type="password"
+                id="adminPassword"
+                placeholder="Enter admin password"
+                autocomplete="current-password"
+            >
+
+        </div>
+
+
+        <button
+            class="login-btn"
+            id="loginBtn"
+        >
+            🔐 Login to Admin Panel
+        </button>
+
+
+        <div
+            id="loginError"
+            class="login-error"
+        ></div>
+
+
+        <div
+            id="loginLoading"
+            class="login-loading"
+        >
+            Verifying administrator account...
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     DASHBOARD
+========================= -->
+
+<div
+    id="dashboard"
+    class="container"
+>
+
+    <div class="dashboard-title">
+
+        <h2>
+            Admin Dashboard
+        </h2>
+
+        <p>
+            View and manage every payment submitted by students.
+        </p>
+
+    </div>
+
+
+    <div class="stats">
+
+        <div class="stat">
+
+            <span>
+                Pending Payments
+            </span>
+
+            <strong id="pendingCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="stat">
+
+            <span>
+                Approved Payments
+            </span>
+
+            <strong id="approvedCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="stat">
+
+            <span>
+                Rejected Payments
+            </span>
+
+            <strong id="rejectedCount">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="load-section">
+
+        <button
+            class="load-btn"
+            id="loadPaymentsBtn"
+        >
+            🔄 Load Payments
+        </button>
+
+    </div>
+
+
+    <div class="payment-heading">
+
+        <h2>
+            All Payment Requests
+        </h2>
+
+        <span id="paymentCountLabel">
+            No payments loaded
+        </span>
+
+    </div>
+
+
+    <div id="paymentsContainer">
+
+        <div class="empty">
+
+            <div class="empty-icon">
+                💳
+            </div>
+
+            <strong>
+                Payments are not loaded yet
+            </strong>
+
+            Click "Load Payments" to view all
+            payment submissions.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script type="module">
+
+/* =========================
+   FIREBASE
+========================= */
+
+import {
+    auth,
+    db
+} from "./firebase-config.js";
+
+import {
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+
+import {
+    ref,
+    get,
+    update
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
+
+
+/* =========================
+   ADMIN ACCOUNT
+========================= */
+
+/*
+ * This is the ONLY email that can
+ * enter the admin dashboard.
+ *
+ * The password is NOT stored here.
+ *
+ * Firebase Authentication checks
+ * the password.
+ */
+
+const ADMIN_EMAIL =
+    "madhu12lakshmi@gmail.com";
+
+
+/* =========================
+   ELEMENTS
+========================= */
+
+const loginScreen =
+    document.getElementById(
+        "loginScreen"
+    );
+
+const dashboard =
+    document.getElementById(
+        "dashboard"
+    );
+
+const adminEmail =
+    document.getElementById(
+        "adminEmail"
+    );
+
+const adminPassword =
+    document.getElementById(
+        "adminPassword"
+    );
+
+const loginBtn =
+    document.getElementById(
+        "loginBtn"
+    );
+
+const loginError =
+    document.getElementById(
+        "loginError"
+    );
+
+const loginLoading =
+    document.getElementById(
+        "loginLoading"
+    );
+
+const logoutBtn =
+    document.getElementById(
+        "logoutBtn"
+    );
+
+const loadPaymentsBtn =
+    document.getElementById(
+        "loadPaymentsBtn"
+    );
+
+const container =
+    document.getElementById(
+        "paymentsContainer"
+    );
+
+const paymentCountLabel =
+    document.getElementById(
+        "paymentCountLabel"
+    );
+
+
+/* =========================
+   CURRENT ADMIN
+========================= */
+
+let currentUser = null;
+
+
+/* =========================
+   SHOW ERROR
+========================= */
+
+function showLoginError(message){
+
+    loginError.textContent =
+        message;
+
+    loginError.style.display =
+        "block";
+}
+
+
+/* =========================
+   HIDE ERROR
+========================= */
+
+function hideLoginError(){
+
+    loginError.textContent =
+        "";
+
+    loginError.style.display =
+        "none";
+}
+
+
+/* =========================
+   ADMIN LOGIN
+========================= */
+
+async function adminLogin(){
+
+    hideLoginError();
+
+    const email =
+        adminEmail.value
+            .trim()
+            .toLowerCase();
+
+    const password =
+        adminPassword.value;
+
+
+    /*
+     * Check email BEFORE contacting Firebase.
+     */
+
+    if(email !== ADMIN_EMAIL){
+
+        showLoginError(
+            "This email address is not authorized to access the admin panel."
+        );
+
+        adminEmail.focus();
+
+        return;
+    }
+
+
+    if(!password){
+
+        showLoginError(
+            "Please enter the admin password."
+        );
+
+        adminPassword.focus();
+
+        return;
+    }
+
+
+    loginBtn.disabled =
+        true;
+
+    loginLoading.style.display =
+        "block";
+
+
+    try{
+
+        /*
+         * Firebase verifies:
+         *
+         * Email
+         * Password
+         */
+
+        const credential =
+            await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
+
+
+        const user =
+            credential.user;
+
+
+        /*
+         * Double-check the authenticated
+         * Firebase email.
+         */
+
+        if(
+            !user.email ||
+            user.email.toLowerCase() !==
+            ADMIN_EMAIL
+        ){
+
+            await signOut(auth);
+
+            throw new Error(
+                "This Firebase account is not authorized as the administrator."
+            );
+
+        }
+
+
+        currentUser =
+            user;
+
+
+        /*
+         * Open dashboard.
+         */
+
+        loginScreen.style.display =
+            "none";
+
+        dashboard.style.display =
+            "block";
+
+        logoutBtn.style.display =
+            "block";
+
+
+        /*
+         * Clear password from the page.
+         */
+
+        adminPassword.value =
+            "";
+
+
+        /*
+         * Automatically load payments
+         * after successful login.
+         */
+
+        await loadPayments();
+
+
+    }catch(error){
+
+        console.error(
+            "Admin login error:",
+            error
+        );
+
+
+        let message =
+            "Unable to login to the admin panel.";
+
+
+        if(
+            error.code ===
+            "auth/invalid-credential"
+        ){
+
+            message =
+                "Incorrect admin email or password.";
+
+        }
+
+        else if(
+            error.code ===
+            "auth/wrong-password"
+        ){
+
+            message =
+                "Incorrect admin password.";
+
+        }
+
+        else if(
+            error.code ===
+            "auth/user-not-found"
+        ){
+
+            message =
+                "This admin account does not exist in Firebase Authentication.";
+
+        }
+
+        else if(
+            error.code ===
+            "auth/too-many-requests"
+        ){
+
+            message =
+                "Too many unsuccessful attempts. Please try again later.";
+
+        }
+
+        else if(
+            error.message
+        ){
+
+            message =
+                error.message;
+
+        }
+
+
+        showLoginError(
+            message
+        );
+
+    }finally{
+
+        loginBtn.disabled =
+            false;
+
+        loginLoading.style.display =
+            "none";
+
+    }
+
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+loginBtn.addEventListener(
+    "click",
+    adminLogin
+);
+
+
+/* =========================
+   ENTER KEY
+========================= */
+
+adminPassword.addEventListener(
+    "keydown",
+    (event) => {
+
+        if(event.key === "Enter"){
+
+            event.preventDefault();
+
+            adminLogin();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   AUTH STATE
+========================= */
+
+onAuthStateChanged(
+    auth,
+    async (user) => {
+
+        /*
+         * If Firebase already has the
+         * administrator logged in,
+         * verify the email.
+         */
+
+        if(user){
+
+            if(
+                user.email &&
+                user.email.toLowerCase() ===
+                ADMIN_EMAIL
+            ){
+
+                currentUser =
+                    user;
+
+                loginScreen.style.display =
+                    "none";
+
+                dashboard.style.display =
+                    "block";
+
+                logoutBtn.style.display =
+                    "block";
+
+                /*
+                 * Load automatically.
+                 */
+
+                await loadPayments();
+
+            }
+
+            else{
+
+                /*
+                 * A student or another account
+                 * must never see the dashboard.
+                 */
+
+                await signOut(auth);
+
+                currentUser =
+                    null;
+
+                loginScreen.style.display =
+                    "flex";
+
+                dashboard.style.display =
+                    "none";
+
+                logoutBtn.style.display =
+                    "none";
+
+            }
+
+        }
+
+    }
+);
+
+
+/* =========================
+   LOAD PAYMENTS
+========================= */
+
+loadPaymentsBtn.addEventListener(
+    "click",
+    loadPayments
+);
+
+
+async function loadPayments(){
+
+    /*
+     * Absolutely require the
+     * correct Firebase admin account.
+     */
+
+    if(
+        !currentUser ||
+        !currentUser.email ||
+        currentUser.email.toLowerCase() !==
+        ADMIN_EMAIL
+    ){
+
+        alert(
+            "Please login with the administrator account first."
+        );
+
+        return;
+
+    }
+
+
+    loadPaymentsBtn.disabled =
+        true;
+
+    loadPaymentsBtn.textContent =
+        "⏳ Loading Payments...";
+
+
+    container.innerHTML = `
+
+        <div class="loading">
+
+            <div class="spinner"></div>
+
+            Loading all payment requests...
+
+        </div>
+
+    `;
+
+
+    try{
+
+        const snapshot =
+            await get(
+                ref(
+                    db,
+                    "payments"
+                )
+            );
+
+
+        if(!snapshot.exists()){
+
+            updateStats([]);
+
+            paymentCountLabel.textContent =
+                "0 payments";
+
+
+            container.innerHTML = `
+
+                <div class="empty">
+
+                    <div class="empty-icon">
+                        📭
+                    </div>
+
+                    <strong>
+                        No payment requests yet
+                    </strong>
+
+                    Students have not submitted
+                    any payments.
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        const payments = [];
+
+
+        snapshot.forEach(
+            (child) => {
+
+                payments.push({
+
+                    id:
+                        child.key,
+
+                    ...child.val()
+
+                });
+
+            }
+        );
+
+
+        /*
+         * Newest first.
+         */
+
+        payments.sort(
+            (a,b) =>
+                (b.submittedAt || 0) -
+                (a.submittedAt || 0)
+        );
+
+
+        updateStats(
+            payments
+        );
+
+
+        paymentCountLabel.textContent =
+            `${payments.length} payment${
+                payments.length === 1
+                    ? ""
+                    : "s"
+            }`;
+
+
+        container.innerHTML = "";
+
+
+        payments.forEach(
+            (payment) => {
+
+                renderPayment(
+                    payment
+                );
+
+            }
+        );
+
+
+    }catch(error){
+
+        console.error(
+            "Load payments error:",
+            error
+        );
+
+
+        container.innerHTML = `
+
+            <div class="empty">
+
+                <div class="empty-icon">
+                    ⚠️
+                </div>
+
+                <strong>
+                    Unable to load payments
+                </strong>
+
+                <br>
+
+                ${escapeHtml(
+                    error.message ||
+                    "Firebase Database error."
+                )}
+
+            </div>
+
+        `;
+
+    }finally{
+
+        loadPaymentsBtn.disabled =
+            false;
+
+        loadPaymentsBtn.textContent =
+            "🔄 Load Payments";
+
+    }
+
+}
+
+
+/* =========================
+   RENDER PAYMENT
+========================= */
+
+function renderPayment(payment){
+
+    const card =
+        document.createElement(
+            "div"
+        );
+
+    card.className =
+        "payment-card";
+
+
+    const date =
+        payment.submittedAt
+
+        ?
+
+        new Date(
+            payment.submittedAt
+        ).toLocaleString(
+            "en-IN"
+        )
+
+        :
+
+        "Unknown";
+
+
+    const reviewedDate =
+        payment.reviewedAt
+
+        ?
+
+        new Date(
+            payment.reviewedAt
+        ).toLocaleString(
+            "en-IN"
+        )
+
+        :
+
+        null;
+
+
+    const status =
+        payment.status ||
+        "pending";
+
+
+    let statusClass =
+        "pending";
+
+    let statusIcon =
+        "🟠";
+
+    let statusText =
+        "Pending";
+
+
+    if(status === "approved"){
+
+        statusClass =
+            "approved";
+
+        statusIcon =
+            "🟢";
+
+        statusText =
+            "Approved";
+
+    }
+
+    else if(status === "rejected"){
+
+        statusClass =
+            "rejected";
+
+        statusIcon =
+            "🔴";
+
+        statusText =
+            "Rejected";
+
+    }
+
+
+    card.innerHTML = `
+
+        <div class="payment-top">
+
+            <div>
+
+                <div class="student-name">
+
+                    ${escapeHtml(
+                        payment.name ||
+                        "Student"
+                    )}
+
+                </div>
+
+                <div class="payment-id">
+
+                    Payment ID:
+                    ${escapeHtml(
+                        payment.id ||
+                        ""
+                    )}
+
+                </div>
+
+            </div>
+
+
+            <span
+                class="status ${statusClass}"
+            >
+
+                ${statusIcon}
+
+                ${statusText}
+
+            </span>
+
+        </div>
+
+
+        <div class="details">
+
+
+            <div class="detail">
+
+                <span class="detail-label">
+                    Email
+                </span>
+
+                <div class="detail-value">
+
+                    ${escapeHtml(
+                        payment.email ||
+                        ""
+                    )}
+
+                </div>
+
+            </div>
+
+
+            <div class="detail">
+
+                <span class="detail-label">
+                    Amount
+                </span>
+
+                <div class="detail-value">
+
+                    ₹${escapeHtml(
+                        payment.amount ||
+                        35
+                    )}
+
+                </div>
+
+            </div>
+
+
+            <div class="detail">
+
+                <span class="detail-label">
+                    UTR / Transaction ID
+                </span>
+
+                <div class="detail-value utr-value">
+
+                    ${escapeHtml(
+                        payment.utr ||
+                        "Not provided"
+                    )}
+
+                </div>
+
+            </div>
+
+
+            <div class="detail">
+
+                <span class="detail-label">
+                    Submitted
+                </span>
+
+                <div class="detail-value">
+
+                    ${escapeHtml(
+                        date
+                    )}
+
+                </div>
+
+            </div>
+
+
+            ${
+                reviewedDate
+
+                ?
+
+                `
+
+                <div class="detail">
+
+                    <span class="detail-label">
+                        Reviewed
+                    </span>
+
+                    <div class="detail-value">
+
+                        ${escapeHtml(
+                            reviewedDate
+                        )}
+
+                    </div>
+
+                </div>
+
+                `
+
+                :
+
+                ""
+
+            }
+
+        </div>
+
+
+        ${
+            status === "pending"
+
+            ?
+
+            `
+
+            <div class="actions">
+
+                <button
+                    class="approve"
+                    data-action="approve"
+                    data-id="${escapeHtml(
+                        payment.id
+                    )}"
+                    data-uid="${escapeHtml(
+                        payment.uid ||
+                        ""
+                    )}"
+                >
+
+                    ✓ Approve Payment
+
+                </button>
+
+
+                <button
+                    class="reject"
+                    data-action="reject"
+                    data-id="${escapeHtml(
+                        payment.id
+                    )}"
+                    data-uid="${escapeHtml(
+                        payment.uid ||
+                        ""
+                    )}"
+                >
+
+                    ✕ Reject Payment
+
+                </button>
+
+            </div>
+
+            `
+
+            :
+
+            ""
+
+        }
+
+    `;
+
+
+    container.appendChild(
+        card
+    );
+
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+function updateStats(payments){
+
+    let pending = 0;
+    let approved = 0;
+    let rejected = 0;
+
+
+    payments.forEach(
+        (payment) => {
+
+            if(
+                payment.status ===
+                "approved"
+            ){
+
+                approved++;
+
+            }
+
+            else if(
+                payment.status ===
+                "rejected"
+            ){
+
+                rejected++;
+
+            }
+
+            else{
+
+                pending++;
+
+            }
+
+        }
+    );
+
+
+    document.getElementById(
+        "pendingCount"
+    ).textContent =
+        pending;
+
+
+    document.getElementById(
+        "approvedCount"
+    ).textContent =
+        approved;
+
+
+    document.getElementById(
+        "rejectedCount"
+    ).textContent =
+        rejected;
+
+}
+
+
+/* =========================
+   APPROVE / REJECT
+========================= */
+
+container.addEventListener(
+    "click",
+    async (event) => {
+
+        const button =
+            event.target.closest(
+                "button[data-action]"
+            );
+
+
+        if(!button){
+            return;
+        }
+
+
+        /*
+         * Security check.
+         */
+
+        if(
+            !currentUser ||
+            !currentUser.email ||
+            currentUser.email.toLowerCase() !==
+            ADMIN_EMAIL
+        ){
+
+            alert(
+                "Administrator authentication is required."
+            );
+
+            return;
+
+        }
+
+
+        const action =
+            button.dataset.action;
+
+        const paymentId =
+            button.dataset.id;
+
+        const uid =
+            button.dataset.uid;
+
+
+        const newStatus =
+            action === "approve"
+                ? "approved"
+                : "rejected";
+
+
+        const confirmation =
+            confirm(
+
+                action === "approve"
+
+                ?
+
+                "Are you sure you want to approve this payment?"
+
+                :
+
+                "Are you sure you want to reject this payment?"
+
+            );
+
+
+        if(!confirmation){
+            return;
+        }
+
+
+        button.disabled =
+            true;
+
+
+        try{
+
+            /*
+             * Update payment.
+             */
+
+            await update(
+                ref(
+                    db,
+                    "payments/" +
+                    paymentId
+                ),
+                {
+
+                    status:
+                        newStatus,
+
+                    reviewedAt:
+                        Date.now(),
+
+                    reviewedBy:
+                        currentUser.uid
+
+                }
+            );
+
+
+            /*
+             * Update student's access.
+             */
+
+            if(uid){
+
+                await update(
+                    ref(
+                        db,
+                        "users/" +
+                        uid
+                    ),
+                    {
+
+                        paymentStatus:
+                            newStatus
+
+                    }
+                );
+
+            }
+
+
+            /*
+             * Reload payments.
+             */
+
+            await loadPayments();
+
+
+        }catch(error){
+
+            console.error(
+                "Payment update error:",
+                error
+            );
+
+
+            alert(
+                "Unable to update payment.\n\n" +
+                error.message
+            );
+
+
+            button.disabled =
+                false;
+
+        }
+
+    }
+);
+
+
+/* =========================
+   ESCAPE HTML
+========================= */
+
+function escapeHtml(value){
+
+    if(
+        value === undefined ||
+        value === null
+    ){
+
+        return "";
+
+    }
+
+
+    return String(value)
+
+        .replaceAll(
+            "&",
+            "&amp;"
+        )
+
+        .replaceAll(
+            "<",
+            "&lt;"
+        )
+
+        .replaceAll(
+            ">",
+            "&gt;"
+        )
+
+        .replaceAll(
+            '"',
+            "&quot;"
+        )
+
+        .replaceAll(
+            "'",
+            "&#039;"
+        );
+
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+logoutBtn.addEventListener(
+    "click",
+    async () => {
+
+        try{
+
+            await signOut(
+                auth
+            );
+
+            currentUser =
+                null;
+
+            dashboard.style.display =
+                "none";
+
+            logoutBtn.style.display =
+                "none";
+
+            loginScreen.style.display =
+                "flex";
+
+            adminEmail.value =
+                "";
+
+            adminPassword.value =
+                "";
+
+            hideLoginError();
+
+            adminEmail.focus();
+
+
+        }catch(error){
+
+            console.error(
+                "Logout error:",
+                error
+            );
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
